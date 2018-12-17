@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=".\css\styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>DO MORE. Digital Design</title>
+    <script>
+        $(document).ready(function(){
+        $(".material-icons").on('click', function(event) {
+             /*$("#view-projects").fadeTo('slow','0.5', function () { //callback function
+                            //$("#view-projects").animate({width: '50%'}, 'slow');
+                          
+                        });*/
+            //$("#view-projects").fadeIn(1200);                 
+            let temporal = $("#view-projects").offset();    
+            // Make sure this.hash has a value before overriding default behavior
+            if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+            // Store hash
+            var hash = this.hash;
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $("#view-projects").offset().top //$(hash).offset().top
+            }, 600, function(){
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+            } // End if
+        }); 
+         /* Every time the window is scrolled ... */
+        $(window).scroll( function(){
+        /* Check the location of each desired element */
+        $('section').each( function(i){
+            //console.log('its working');
+            var bottom_of_object = ($(this).offset().top + $(this).outerHeight())/1.7;
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            /* If the object is completely visible in the window, fade it it */
+            if( bottom_of_window > bottom_of_object ){
+                
+                $(this).animate({'opacity':'1'},500);
+                    
+            }
+            
+        }); 
+    
+    });
+ });
+    </script>
+</head>
+<body> 
+    <div class='header'>
+        <!--<p id="logo">
+            DO<br> 
+            MORE. <span class="logo-design"><span class="logo-design">// Digital Design</span>
+            
+        </p>-->
+        <nav>
+            <ul class="wrap-links">
+                <li>
+                    Projects
+                </li>
+                <li>
+                    About
+                </li>
+                <li>
+                    Contact
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main">
+
+        <section id="projects"> 
+            <div class="portfolio-img">
+                <div class="portfolio-title">
+                </div>
+            </div> 
+            <div class="wrap-arrow"> 
+                <p>
+                    View projects
+                </p>    
+                <a href="#view-projects"><i class="material-icons">
+                    arrow_downward
+                </i>
+                </a>
+            </div>     
+        </section>
+
+        <section id="view-projects">
+          <div class="wrap-columns">
+                <div id="motion" class="columns-skills">
+                    <div class="content-subsection">
+                        <h1>MOTION</h1>
+                        <p>
+                            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.
+                        </p>
+                        <a href="#" class="btn-view-projects"> View Motion Projects</a>
+                    </div>
+                </div>
+                <div id="ux" class="columns-skills">
+                    <div class="content-subsection">
+                        <h1>UX / UI</h1>
+                        <p>
+                            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.
+                        </p>
+                        <a href="#" class="btn-view-projects"> View UX Projects</a>
+                    </div>
+                </div>
+                <div id="git" class="columns-skills"> 
+                    <div class="content-subsection">
+                        <h1>GIT</h1>
+                        <p>
+                            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia.
+                        </p>
+                        <a href="#" class="btn-view-projects"> View Git Repository</a>
+                    </div> 
+               </div>     
+            </div>
+        </section>
+       
+        <section id="about">
+        </section>
+        <section id="contact">
+        </section>
+    </div>
+
+    <div class='footer'>
+    </div>
+
+</body>
+</html>
+

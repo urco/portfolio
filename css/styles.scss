@@ -1,0 +1,233 @@
+* {
+    box-sizing: border-box;
+}
+
+$primary-color: #6200EE;
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+
+@font-face {
+    font-family:'Abril Fatface', cursive;
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Jaldi', sans-serif;
+    src: url("https://fonts.googleapis.com/css?family=Abril+Fatface|Lato|Merriweather+Sans|Roboto+Mono|Jaldi" rel="stylesheet"); 
+}
+
+#projects {
+    height: 100%;
+    //background-color: green;
+}
+
+#about {
+    //width: 100%;
+    height: 100%;
+    background-color:#b1f1ff;
+}
+
+#contact{
+    //width: 100%;
+    height: 100%;
+    background-color:#ffaf88;
+}
+
+#view-projects {
+    //display: none;
+    height: 100%;
+    //background-color: red;
+}
+
+.btn-view-projects {
+    display: block;
+    text-align: center;
+    margin-top: 3.125rem;
+    padding: 10px 10px;
+    border-color: $primary-color;
+    text-decoration: none;
+    border: 2px solid $primary-color;
+}
+
+.columns-skills {
+    h1 {
+        text-align: center;
+        color:$primary-color;
+    }
+    .content-subsection {
+        line-height: 1.5rem;
+        padding: 2rem;
+    }
+    height: 80%;
+    width: 30%;
+    text-align: justify;
+    font-family: 'Jaldi', sans-serif;
+    //font-family: 'Roboto Mono';
+    background-color: #fcffa7;
+}
+
+.logo-design {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.header {
+    padding-right: 3.125rem;
+    position: fixed;
+    top: 0;
+    background-color:rgb(255, 255, 255 ,0.95);
+    width: 100%;
+    font-family: 'Jaldi', sans-serif;
+    z-index: 10;
+
+        ul{
+            li{
+                padding: 0.5rem 2rem;
+            }
+        }
+    }
+
+.main {
+
+      height: 100%;
+        .wrap-arrow {
+            color: $primary-color;
+            //font-family: 'Roboto Mono', sans-serif;
+            font-family: 'Jaldi', sans-serif;
+            font-size: 0.75rem;
+            text-align: center;
+            margin-top:2rem;
+            p {
+                margin: 0.5rem;
+            }
+            .material-icons {
+                color: $primary-color;
+                }
+            }                  
+}
+
+nav {
+    color: $primary-color;
+}
+
+.portfolio-img {
+        height: 85%;
+        //background-color: blue;
+        background-image: url("../img/landpage-img.jpeg");
+        background-size: cover;
+        background-position: center center;
+    }
+
+section {
+    opacity: 0;
+    margin-bottom: 2.5rem;
+}
+
+.wrap-columns {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.wrap-links {
+  padding-left: 0;  
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-end;
+  height: auto;
+}
+
+#projects {
+
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+@media only screen and (max-width: 768px) {
+    
+   .header {
+        ul{
+                li{
+                    padding: 0.5rem 2rem;
+                }
+            }
+   }  
+
+    .portfolio-img {
+        height: 80%;
+    }
+
+    #projects {
+        //width: 100%;
+        height: 100%;
+}
+
+    .header {
+        padding-right: 0;
+        height: 10%;
+    }
+
+    .wrap-columns {
+        width: 100%;
+        //height: auto;
+        justify-content: flex-start;
+        flex-flow: column ;
+    }
+
+    .wrap-links {
+        justify-content: center;   
+    }
+
+    .columns-skills {
+       margin-bottom: 1rem;
+       width: 100%;     
+    }
+
+    #logo {
+        margin-top: 2.3rem;
+        font-size: 1rem;
+        margin-left: 2rem;
+        font-family: 'Helvetica';
+    }
+}
+
+
+
