@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href=".\css\styles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -26,9 +26,8 @@
             // Using jQuery's animate() method to add smooth page scroll
             // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
             $('html, body').animate({
-                scrollTop: $("#view-projects").offset().top //$(hash).offset().top
+                scrollTop: $("#view-projects").offset().top - 34 //$(hash).offset().top
             }, 600, function(){
-
                 // Add hash (#) to URL when done scrolling (default click behavior)
                 window.location.hash = hash;
             });
@@ -37,14 +36,13 @@
          /* Every time the window is scrolled ... */
         $(window).scroll( function(){
         /* Check the location of each desired element */
-        $('section').each( function(i){
-            //console.log('its working');
-            var bottom_of_object = ($(this).offset().top + $(this).outerHeight())/1.7;
+        $('.scroll-opacity').each( function(i){
+            console.log('its working');
+            var bottom_of_object = ($(this).offset().top + $(this).outerHeight())/1.4;
             var bottom_of_window = $(window).scrollTop() + $(window).height();
             
             /* If the object is completely visible in the window, fade it it */
-            if( bottom_of_window > bottom_of_object ){
-                
+            if( bottom_of_window > bottom_of_object ){         
                 $(this).animate({'opacity':'1'},500);
                     
             }
@@ -95,7 +93,7 @@
             </div>     
         </section>
 
-        <section id="view-projects">
+        <section id="view-projects" class="scroll-opacity">
           <div class="wrap-columns">
                 <div id="motion" class="columns-skills">
                     <div class="content-subsection">
@@ -127,9 +125,14 @@
             </div>
         </section>
        
-        <section id="about">
+        <section id="about" class="scroll-opacity">
+            <div class="wrap-corner-links">
+                <a href="#">Work</a>
+                <a id="spacer" href="#"></a>
+                <a href="#">CV</a>
+            </div>     
         </section>
-        <section id="contact">
+        <section id="contact" class="scroll-opacity">
         </section>
     </div>
 
